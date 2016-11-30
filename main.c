@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "lib.h"
 
 #ifdef OVERRIDE_FOO
@@ -7,5 +9,7 @@ int foo(void) {
 #endif
 
 int main(void) {
-  return foo();
+  printf("foo was%soverriden.\n", foo() ? " " : " not ");
+
+  return 0;
 }
